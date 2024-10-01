@@ -1,0 +1,5 @@
+openpyxl
+pycryptodome
+requests
+aiogram
+pyzbar
