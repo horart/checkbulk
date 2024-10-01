@@ -3,3 +3,4 @@ pycryptodome
 requests
 aiogram
 pyzbar
+Pillow
