@@ -2,10 +2,10 @@ import json
 import requests
 from datetime import datetime
 import crypto
-import output
+import io
 
 
-def save(s):
+def query(s):
     data_in = dict(i.split('=') for i in s.split('&'))
     data_in['t'] = datetime.strptime(data_in['t'], '%Y%m%dT%H%M').strftime('%d.%m.%Y %H:%M')
 
@@ -52,5 +52,9 @@ def save(s):
         })
         # product + category
 
-    output.write(store, date, items_out, 'budget.xlsx') #
-    print('')
+    return store, date, items_out
+
+def pretty_print(store, date, items):
+    return store + '\n' + date.strftime('%d.%m.%y %H:%M') + '\n\n' + \
+        '\n'.join(f'{i['name']}\n {i['price']}*{i['quantity']}={round(i['price']*i['quantity'], 2)}' for i in items) + \
+            f'\nИТОГО: {sum(round(i['price']*i['quantity'], 2) for i in items)}'

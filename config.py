@@ -1,1 +1,5 @@
 BOT_TOKEN = '7698376278:AAGFI2Ecyi-OVvIYvhscSLLR1fS-G3Q7pY4'
+DB_USER = 'root'
+DB_NAME = 'db'
+DB_PASSWORD = 'root'
+DB_HOST = 'mydb'

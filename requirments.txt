@@ -4,3 +4,4 @@ requests
 aiogram
 pyzbar
 Pillow
+mysql-connector-python
